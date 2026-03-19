@@ -348,16 +348,24 @@ export default function App() {
   const scrollToTop = useCallback((behavior = 'auto') => {
     const target = scrollRef.current;
 
-    if (!target) {
-      return;
+    if (target) {
+      target.scrollTop = 0;
+      target.scrollTo({ top: 0, behavior });
     }
 
-    target.scrollTop = 0;
-    target.scrollTo({ top: 0, behavior });
+    // 일부 모바일/브라우저에서는 페이지 자체 스크롤이 남아 있을 수 있어 함께 초기화
+    window.scrollTo({ top: 0, behavior });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 
     // 렌더 이후 높이가 바뀌는 화면에서도 확실히 상단 고정
     requestAnimationFrame(() => {
-      target.scrollTop = 0;
+      if (target) {
+        target.scrollTop = 0;
+      }
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
     });
   }, []);
 
