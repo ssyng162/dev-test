@@ -180,7 +180,7 @@ const RESULTS_DATA = {
       '여러 기능이나 역할이 하나의 흐름으로 정리될 때,\n복잡한 과정이 매끄럽게 이어질 때 즐거움을 느낍니다.',
     strengths: ['전체 맥락 파악', '흐름 정리', '구조화', '큰 그림 보기'],
     frustratingSituations: ['앞뒤 맥락 없이 일이 추가될 때', '임시방편이 반복될 때'],
-    recommendedFields: ['백엔드', '인프라', '풀스택'],
+    recommendedFields: ['백엔드', '인프라', '풀스택', 'PM'],
     recommendedEnvironments: ['여러 기능이 연결되는 팀', '규모 있는 서비스 회사'],
     studyMate: 'structure',
     projectMate: 'refine'
@@ -194,7 +194,7 @@ const RESULTS_DATA = {
       '복잡한 시스템의 원리를 이해했을 때,\n얽혀 있는 구조를 논리적으로 정리했을 때 즐거움을 느낍니다.',
     strengths: ['원리 파악', '논리적 사고', '구조 이해', '체계 정리'],
     frustratingSituations: ['이유 없이 감으로 밀어붙이는 상황', '설명 없이 속도만 강조되는 환경'],
-    recommendedFields: ['백엔드', 'AI', '데이터분석'],
+    recommendedFields: ['백엔드', 'AI', '데이터분석', 'PM'],
     recommendedEnvironments: ['기술 깊이가 중요한 조직', '대규모 시스템 팀'],
     studyMate: 'trace',
     projectMate: 'experiment'
@@ -208,7 +208,7 @@ const RESULTS_DATA = {
       '내가 한 일이 사용자 경험의 변화로 이어질 때,\n바로 좋아졌다는 피드백이 올 때 즐거움을 느낍니다.',
     strengths: ['사용자 관점', '공감력', '체감 개선', '서비스 감각'],
     frustratingSituations: ['아무도 체감하지 못하는 일만 오래 할 때', '결과가 너무 멀리 있을 때'],
-    recommendedFields: ['프론트엔드', '모바일'],
+    recommendedFields: ['프론트엔드', '모바일', 'PM'],
     recommendedEnvironments: ['서비스 회사', '스타트업', '반응이 빠른 팀'],
     studyMate: 'connect',
     projectMate: 'stable'
@@ -222,7 +222,7 @@ const RESULTS_DATA = {
       '작은 불편이 사라지고 매끄러워졌을 때,\n남들이 놓친 어색함을 줄여냈을 때 즐거움을 느낍니다.',
     strengths: ['꼼꼼함', '완성도 향상', '품질 개선', '디테일 조정'],
     frustratingSituations: ['대충 돌아가기만 하면 된다는 분위기', '디테일을 무시하는 환경'],
-    recommendedFields: ['프론트엔드', '모바일'],
+    recommendedFields: ['프론트엔드', '모바일', 'QA'],
     recommendedEnvironments: ['완성도와 안정성을 중시하는 조직', '대기업'],
     studyMate: 'stable',
     projectMate: 'flow'
@@ -250,7 +250,7 @@ const RESULTS_DATA = {
       '시스템이 큰 문제 없이 돌아갈 때,\n믿고 맡길 수 있는 탄탄한 상태를 만들었을 때 즐거움을 느낍니다.',
     strengths: ['신뢰성', '안정성', '책임감', '기반 구축'],
     frustratingSituations: ['방향이 자주 바뀌는 환경', '안정성보다 속도만 중시하는 분위기'],
-    recommendedFields: ['인프라', '보안', '백엔드'],
+    recommendedFields: ['인프라', '보안', '백엔드', 'QA'],
     recommendedEnvironments: ['금융권', '대규모 서비스', '안정성이 중요한 조직'],
     studyMate: 'refine',
     projectMate: 'reaction'
@@ -264,7 +264,7 @@ const RESULTS_DATA = {
       '서로 다른 역할의 관점을 맞출 때,\n팀의 흐름이 매끄러워질 때 즐거움을 느낍니다.',
     strengths: ['소통', '맥락 전달', '협업 조율', '연결 능력'],
     frustratingSituations: ['협업이 자주 끊기는 환경', '정보가 흩어져 방치되는 분위기'],
-    recommendedFields: ['풀스택', '프론트엔드', '백엔드'],
+    recommendedFields: ['풀스택', '프론트엔드', '백엔드', 'PM'],
     recommendedEnvironments: ['다양한 직군이 협업하는 팀', '서비스 조직'],
     studyMate: 'flow',
     projectMate: 'trace'
@@ -278,7 +278,7 @@ const RESULTS_DATA = {
       '이상 현상의 원인을 찾아냈을 때,\n꼬인 문제를 하나씩 풀어냈을 때 즐거움을 느낍니다.',
     strengths: ['원인 분석', '집요함', '디버깅 감각', '문제 해결'],
     frustratingSituations: ['원인을 찾기보다 빨리 덮고 넘어가려는 분위기', '비슷한 문제가 반복되는 환경'],
-    recommendedFields: ['데이터분석', '보안', '게임'],
+    recommendedFields: ['데이터분석', '보안', '게임', 'QA'],
     recommendedEnvironments: ['금융권', '대규모 플랫폼', '복잡한 시스템 환경'],
     studyMate: 'structure',
     projectMate: 'connect'
