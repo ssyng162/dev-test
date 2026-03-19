@@ -400,6 +400,12 @@ export default function App() {
   );
 
   useEffect(() => {
+    if (step === 'allTypes' && viewingDetailType) {
+      scrollToTop('auto');
+    }
+  }, [step, viewingDetailType, scrollToTop]);
+
+  useEffect(() => {
     const initialSnapshot = window.history.state?.__app ? normalizeSnapshot(window.history.state) : createDefaultSnapshot();
 
     applySnapshot(initialSnapshot, { replace: true, scroll: false });
