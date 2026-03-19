@@ -1,30 +1,51 @@
-# 개발 성향 진단 (GitHub Pages 배포용)
-
-이 저장소는 React + Vite 기반으로 구성되어 있으며, `main` 브랜치에 push하면 GitHub Actions를 통해 GitHub Pages로 자동 배포됩니다.
-
-## 로컬 실행
-
-```bash
-npm install
-npm run dev
-```
-
-## 로컬 빌드 확인
-
-```bash
-npm run build
-npm run preview
-```
-
-## GitHub Pages 설정 방법
-
-1. 이 저장소를 GitHub에 push합니다.
-2. GitHub 저장소의 **Settings → Pages**로 이동합니다.
-3. **Build and deployment**의 Source를 **GitHub Actions**로 선택합니다.
-4. `main` 브랜치에 push하면 `.github/workflows/deploy.yml`이 실행되어 자동 배포됩니다.
-5. 배포 완료 후 `https://<깃허브아이디>.github.io/<저장소명>/` 형태로 접속합니다.
-
-## 참고
-
-- 프로젝트는 GitHub Actions 환경에서 자동으로 `base` 경로를 저장소명 기준으로 잡습니다.
-- 사용자/조직 페이지 저장소(예: `username.github.io`)라면 `vite.config.js`의 `base` 설정을 `/`로 고정해도 됩니다.
+diff --git a/README.md b/README.md
+index 299e307a5b49ca15351e88c907dc30f5ff38ce9e..4577df03eac462df50471e8c55473f270c81619e 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,44 @@
+-# dev-test
+\ No newline at end of file
++# 개발 성향 진단 (GitHub Pages 배포용)
++
++이 저장소는 React + Vite 기반이며, `main` 브랜치 push 시 GitHub Actions로 Pages에 자동 배포됩니다.
++
++## 로컬 실행
++
++```bash
++npm install
++npm run dev
++```
++
++## 로컬 빌드 확인
++
++```bash
++npm run build
++npm run preview
++```
++
++## GitHub Pages 설정 방법 (중요)
++
++1. 저장소에 push
++2. **Settings → Pages** 이동
++3. **Build and deployment → Source**를 반드시 **GitHub Actions**로 선택
++4. `main` 브랜치에 push
++5. **Actions 탭에서 `Deploy to GitHub Pages` 워크플로우가 초록색(성공)**인지 확인
++6. 배포 주소 접속: `https://<아이디>.github.io/<저장소명>/`
++
++## 화면에 `dev-test`만 뜨는 경우 (트러블슈팅)
++
++`dev-test` 제목만 보이는 화면은 대부분 **React 앱이 아니라 README가 Pages로 노출된 상태**입니다.
++
++아래를 순서대로 확인하세요.
++
++1. Pages Source가 `Deploy from a branch`가 아니라 **GitHub Actions**인지 확인
++2. Actions에서 가장 최근 `Deploy to GitHub Pages` 실행이 **성공**인지 확인
++3. 접속 URL이 `https://<아이디>.github.io/<저장소명>/` 형태인지 확인
++4. 브라우저 강력 새로고침(Windows/Linux: `Ctrl+Shift+R`, macOS: `Cmd+Shift+R`)
++
++## 참고
++
++- 워크플로우는 Node 24 런타임 강제 설정을 포함합니다.
++- Vite `base` 경로는 Actions 환경에서 자동 계산됩니다.
++  - 일반 저장소: `/<저장소명>/`
++  - 사용자/조직 페이지 저장소(`*.github.io`): `/`
