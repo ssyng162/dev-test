@@ -345,28 +345,26 @@ export default function App() {
 
   const scrollRef = useRef(null);
 
-  const scrollToTop = useCallback((behavior = 'auto') => {
-    const target = scrollRef.current;
+  const scrollToTop = useCallback(() => {
+    const run = () => {
+      const target = scrollRef.current;
+      const scrollingElement = document.scrollingElement || document.documentElement;
 
-    if (target) {
-      target.scrollTop = 0;
-      target.scrollTo({ top: 0, behavior });
-    }
-
-    // 일부 모바일/브라우저에서는 페이지 자체 스크롤이 남아 있을 수 있어 함께 초기화
-    window.scrollTo({ top: 0, behavior });
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-
-    // 렌더 이후 높이가 바뀌는 화면에서도 확실히 상단 고정
-    requestAnimationFrame(() => {
       if (target) {
         target.scrollTop = 0;
+        target.scrollTo({ top: 0, behavior: 'auto' });
       }
+
       window.scrollTo({ top: 0, behavior: 'auto' });
+      scrollingElement.scrollTop = 0;
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
-    });
+    };
+
+    run();
+    requestAnimationFrame(run);
+    setTimeout(run, 0);
+    setTimeout(run, 120);
   }, []);
 
   const applySnapshot = useCallback((snapshot, { push = false, replace = false, scroll = true } = {}) => {
@@ -386,7 +384,7 @@ export default function App() {
     }
 
     if (scroll) {
-      scrollToTop('auto');
+      scrollToTop();
     }
   }, [scrollToTop]);
 
@@ -409,7 +407,7 @@ export default function App() {
 
   useEffect(() => {
     if (step === 'allTypes' && viewingDetailType) {
-      scrollToTop('auto');
+      scrollToTop();
     }
   }, [step, viewingDetailType, scrollToTop]);
 
