@@ -345,6 +345,22 @@ export default function App() {
 
   const scrollRef = useRef(null);
 
+  const scrollToTop = useCallback((behavior = 'auto') => {
+    const target = scrollRef.current;
+
+    if (!target) {
+      return;
+    }
+
+    target.scrollTop = 0;
+    target.scrollTo({ top: 0, behavior });
+
+    // 렌더 이후 높이가 바뀌는 화면에서도 확실히 상단 고정
+    requestAnimationFrame(() => {
+      target.scrollTop = 0;
+    });
+  }, []);
+
   const applySnapshot = useCallback((snapshot, { push = false, replace = false, scroll = true } = {}) => {
     const safeSnapshot = normalizeSnapshot(snapshot);
 
@@ -362,11 +378,9 @@ export default function App() {
     }
 
     if (scroll) {
-      requestAnimationFrame(() => {
-        scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+      scrollToTop('auto');
     }
-  }, []);
+  }, [scrollToTop]);
 
   const createSnapshot = useCallback(
     (overrides = {}) =>
