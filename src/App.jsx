@@ -438,6 +438,10 @@ export default function App() {
 
   const navigateTo = useCallback(
     (newStep, newDetailType = null) => {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+
       const snapshot = createSnapshot({
         step: newStep,
         viewingDetailType: newDetailType,
